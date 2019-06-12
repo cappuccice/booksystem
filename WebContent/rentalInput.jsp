@@ -24,13 +24,11 @@
         <div class="row">
             <div class="col-md">
                 <form action="/library/ConfirmRental" method="post">
-                 	<div class="form-group">
-                        <label>ユーザID：</label>
-                        <input type="text" class="form-control" name="userId" size="15">
-                    </div><div class="form-group">
+                    <div class="form-group">
                         <label>一冊目：</label>
                         <input type="text" class="form-control" name="ISBN1" size="15">
-                    </div><div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <label>二冊目：</label>
                         <input type="text" class="form-control" name="ISBN2" size="15">
                     </div><div class="form-group">

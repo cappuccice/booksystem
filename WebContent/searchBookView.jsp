@@ -18,6 +18,13 @@
 
 </head>
 <body>
+
+<!-- 追加分 -->
+<c:forEach items="${error}" var="e">
+<big><font color="red">${e.message}</font></big><br>
+</c:forEach><br><br>
+<!-- ここまで -->
+
 <div class="border col-12">
         <br>
         <h3>蔵書検索</h3>
@@ -63,8 +70,14 @@
 	<tbody>
 		<c:forEach items="${Book}" var="book">
 			<tr><td>${book.isbn}</td><td>${book.divCode}</td><td>${book.title}</td><td>${book.author}</td><td>${book.publisher}</td>
-			<td><form action="/library/confirmBookController?action=bookDelete" method="post"><input type="submit" value="削除"><input type="hidden" name="deleteISBN" value="${book.isbn}"></form></td>
-			<td><form action="/library/showBookInputFormController?action=bookUpdate" method="post"><input type="submit" value="更新"><input type="hidden" name="updateISBN" value="${book.isbn}"></form></td></tr>
+			<td><form action="/library/confirmBookController?action=bookDelete" method="post">
+			<button type="submit" class="btn btn-outline-secondary btn-block">削除</button>
+			<input type="hidden" name="deleteISBN" value="${book.isbn}">
+			</form></td>
+			<td><form action="/library/showBookInputFormController?action=bookUpdate" method="post">
+			<button type="submit" class="btn btn-outline-secondary btn-block">更新</button>
+			<input type="hidden" name="updateISBN" value="${book.isbn}">
+			</form></td></tr>
 		</c:forEach>
 	</tbody>
 	</table>

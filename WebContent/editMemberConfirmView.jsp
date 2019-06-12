@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>削除完了</title>
+<title>確認画面</title>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -15,13 +15,39 @@
 
 </head>
 <body>
-<br>
-会員情報を削除しました。
-<br>
-<br>
+<h3>下記の内容で更新してよろしいですか？</h3>
 <hr>
-<a href= "index.html">トップページに戻る</a>
-
-
+<div class="container">
+<table class="table">
+<thead>
+	<form action="/library/updateMemberController?action=update"
+		method="post">
+			<tr>
+				<td>名前</td>
+				<td>住所</td>
+				<td>電話番号</td>
+				<td>メールアドレス</td>
+				<td>生年月日</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>${member.userName}</td>
+				<td>${member.address}</td>
+				<td>${member.tel}</td>
+				<td>${member.email}</td>
+				<td>${member.birthday}</td>
+				</tr>
+				</tbody>
+		</table>
+		<br>
+		<br>
+		<button type="submit" class="btn btn-outline-secondary btn-block">更新する</button>
+	</form>
+	<br>
+	<form action = "/library/BackToInputFormController" method = "post">
+	<button type="submit" class="btn btn-outline-secondary btn-block">キャンセル</button>
+	<input type = "hidden" name = "action" value = "memberupdate">
+	</form>
 </body>
 </html>

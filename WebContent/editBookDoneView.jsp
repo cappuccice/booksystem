@@ -25,6 +25,6 @@
 			<td>${book.publisher}</td>
 	</table>
 	<br>
-	<a href="index.html">トップページへ戻る</a>
+	<a href="index.html">トップページ</a><br>
 </body>
 </html>

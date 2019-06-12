@@ -19,6 +19,12 @@
 </head>
 <body>
 
+<!-- 追加分 -->
+<c:forEach items="${error}" var="e">
+<big><font color="red">${e.message}</font></big><br>
+</c:forEach><br><br>
+<!-- ここまで -->
+
 <div class="border col-12">
         <br>
         <h3>会員検索</h3>
@@ -39,7 +45,7 @@
                         <label>メールアドレス：</label>
                         <input type="text" class="form-control input-sm" name="email" size="15">
                     </div>
-		            <div class="col-5">
+		            <div class="col-10">
 		                <button type="submit" class="btn btn-outline-secondary btn-block">検索開始</button>
 		                <input type="hidden" name="action" value="search">
 
@@ -72,13 +78,17 @@
 					<td><form
 							action="/library/ConfirmMemberController?action=userDelete"
 							method="post">
-							<input type="submit" value="削除">
-							<input type="hidden" name="deleteuserID" value="${member.userId}">
+							<div class="col-30">
+							<button type="submit" class="btn btn-outline-secondary btn-block">削除</button>
+							<input type="hidden" name="id" value="${member.userId}">
+							</div>
 						</form></td>
-					<td><form action="/library/showUserInputFormController?action=userUpdate"
+					<td><form action="/library/showMemberInputFormController?action=update"
 							method="post">
-							<input type="submit" value="更新">
-							<input type="hidden" name="action" value="${member.userId}">
+							<div class="col-30">
+							<button type="submit" class="btn btn-outline-secondary btn-block">更新</button>
+							<input type="hidden" name="id" value="${member.userId}">
+							</div>
 						</form></td>
 				</tr>
 			</c:forEach>
